@@ -1,0 +1,65 @@
+<div
+  #navbar
+  class="w-screen flex-center bg-white sticky top-0 py-3 max-lg:p-0 z-40"
+>
+  <div
+    class="py-4 change-nav container max-xl:w-[90%] flex items-center justify-between bg-white"
+  >
+    <div class="w-56 flex items-center lg:z-auto">
+      <a
+        [routerLink]=""
+        class="uppercase font-bold text-2xl cursor-pointer z-30"
+        >villa {{ width }} <span class="text-sm">x</span> {{ height }}
+      </a>
+    </div>
+    <div
+      class="w-1/2 hidden max-lg:flex select-none justify-end items-center z-30"
+    >
+      <i
+        (click)="menuActive()"
+        class="fa-solid fa-bars  text-2xl lg:text-3xl  cursor-pointer hover:text-orange-500 hover:scale-125 z-20"
+      ></i>
+    </div>
+    <div
+      [@fadeInOut]="menuActivebar ? 'open' : 'close'"
+      [hidden]="!menuActivebar"
+      class="select-none items-center justify-end w-ful max-lg:fixed max-lg:top-0 max-xl:left-5 max-sm:left-[9px]  bg-white max-lg:justify-center max-lg:w-[95%] opacity-100 rounded-3xl z-20"
+    >
+      <ul
+        class="flex gap-12 max-lg:gap-0 p-0 items-center justify-end max-lg:flex-col max-lg:w-full max-lg:mt-[71px]"
+      >
+        <li *ngFor="let m of menu; let i = index" class="max-lg:w-full">
+          <a
+            (click)="[getURLname(), menuActive()]"
+            [routerLink]="m.path"
+            routerLinkActive="text-orange-500"
+            [routerLinkActiveOptions]="{ exact: true }"
+            class="font-medium hover:text-orange-500 duration-200 ease-in-out text-nowrap max-lg:border-t max-lg:w-full max-lg:flex-center max-lg:py-4"
+            >{{ m.name }}</a
+          >
+        </li>
+
+        <li class="max-lg:hidden">
+          <a
+            (mouseleave)="handleMouseLeave()"
+            routerLink=""
+            class="font-medium group bg-black h-8 w-40 text-sm flex justify-end items-center gap-4 text-white rounded-full relative"
+          >
+            <span
+              class="bg-orange-500 w-8 h-8 flex-center absolute -left-1 rounded-full"
+            >
+              <i
+                *ngIf="hideGift"
+                class="fa-solid fa-gift group-hover:scale-110 duration-300 ease-in-out"
+              ></i>
+            </span>
+            <span
+              class="w-[90%] group-hover:text-orange-500 duration-200 ease-in-out flex-center"
+              >Schedule a visit</span
+            >
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

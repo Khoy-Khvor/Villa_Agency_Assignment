@@ -1,0 +1,92 @@
+<div class="featured w-full h-screen  flex-center  ">
+  <div class="container flex-center max-lg:w-full max-xl:w-[90%]   max-lg:flex-col h-[500px] max-lg:h-auto ">
+    <div class="bg-red-600 relative h-full w-[350px] max-lg:h-[250px] max-lg:w-[90%]">
+      <img
+        class="object-cover w-full h-full"
+        src="../../../..//public/images/featured.jpg"
+        alt="Featur image"
+      />
+      <span
+        class="absolute -left-7 -bottom-7 max-lg:-left-4 max-lg:-bottom-4 w-24 h-24 max-lg:w-10 max-lg:h-10 rounded-full bg-orange-600 flex-center"
+        ><i class="fa-solid fa-book text-white text-5xl max-lg:text-2xl"></i
+      ></span>
+    </div>
+    <div class="w-[600px] max-lg:w-full featured-detail flex flex-col h-full px-8">
+      <span
+        class="w-full text-orange-600 uppercase text-sm font-bold flex items-center gap-1 max-lg:mt-4"
+      >
+        <i class="h-[80%] w-[2.4px] bg-orange-600"></i> Featurd</span
+      >
+      <h1 class="mt-5 text-4xl w-[78%] font-bold max-lg:text-2xl max-lg:mt-3">
+        Best Appartment <span class="flex">& Sea view</span>
+      </h1>
+      <div
+        class=" w-full  h-full flex flex-col items-center justify-center  bg-gray-100 mt-14 max-lg:mt-5 max-2xl:mt-3 rounded-lg overflow-hidden duration-200"
+      >
+        <div class="w-full container-drop min-h-10 flex flex-col text-lg">
+          <span
+            (click)="openDetail(1)"
+            class="border-b p-3 cursor-pointer {{
+              nameOpen === 1 && 'text-orange-600'
+            }}"
+            >Best usful links?</span
+          >
+          <p *ngIf="nameOpen === 1" class="border-y p-3  max-lg:pb-0">
+            Get the <strong>best villa</strong> website template in HTML CSS and
+            Bootstrap for your business. TemplateMo provides you the best free
+            CSS templates in the world. Please tell your friends about it.
+          </p>
+        </div>
+        <div class="w-full min-h-10 flex flex-col text-lg">
+          <span
+            (click)="openDetail(2)"
+            class="border-b p-3 cursor-pointer {{
+              nameOpen === 2 && 'text-orange-600'
+            }}"
+            >How does this work?</span
+          >
+          <p *ngIf="nameOpen === 2" class="border-y p-3">
+            Dolor <strong>almesit amet</strong>, consectetur adipiscing elit,
+            sed doesn't eiusmod tempor incididunt ut labore consectetur
+            adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+            dolore magna aliqua.
+          </p>
+        </div>
+        <div class="w-full min-h-10 flex flex-col text-lg">
+          <span
+            (click)="openDetail(3)"
+            class="border-b p-3 cursor-pointer {{
+              nameOpen === 3 && 'text-orange-600'
+            }}"
+            >Why is Villa Agency the best?</span
+          >
+          <p *ngIf="nameOpen === 3" class="border-y p-3">
+            Dolor <strong>almesit amet</strong>, consectetur adipiscing elit,
+            sed doesn't eiusmod tempor incididunt ut labore consectetur
+            adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+            dolore magna aliqua.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="list-detail w-72 h-full box-shadow p-5 max-lg:w-full max-lg:px-10 max-lg:shadow-none max-lg:mt-5 ">
+      <ul class="w-full h-full flex flex-col max-lg:grid max-lg:grid-cols-2 max-lg:gap-3">
+        <li *ngFor="let item of infoList , let i = index" class="h-full ">
+          <div [class.nobb]="i===3 " class="flex items-center gap-8  border-b h-full max-lg:border-b">
+            <div class="flex-center">
+              <img [src]="item.path" alt="Info image">
+            </div>
+            <div class="flex flex-col justify-center">
+              <h1 class="text-2xl font-bold">
+                 {{item.title}}
+              </h1>
+              <p class="text-gray-600">
+                {{item.des}}
+              </p>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

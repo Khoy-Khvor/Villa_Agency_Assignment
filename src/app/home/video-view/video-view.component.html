@@ -1,0 +1,63 @@
+<div
+  class="w-screen min-h-screen lg:h-screen container-vidoe-section  max-lg:h-[600px] flex flex-col items-center relative  mb-10 "
+>
+  <div class="w-full   h-[60%] max-lg:h-full bg relative img-background ">
+    <img
+      class="w-full h-full object-cover vidoe-section"
+      src="../../../..//public/images/Villa-vs-House.jpg"
+      alt="Villa Image"
+    />
+    <div class="w-full h-full absolute top-0 left-0 blur-white3"></div>
+    <div
+      class="flex-col flex absolute top-20 max-lg:top-5 left-1/2 -translate-x-1/2"
+    >
+      <span
+        class="h-4 text-lg font-bold text-orange-600 flex-center uppercase max-lg:text-sm"
+      >
+        <i class="w-[2px] h-full bg-orange-600 mr-2"></i>
+        Video view
+      </span>
+      <h1
+        class="text-5xl max-lg:text-3xl text-video  flex flex-col items-center mt-5 font-semibold text-white gap-2"
+      >
+        Get Closer View & <span>Different Feeling</span>
+      </h1>
+    </div>
+
+    <div
+      class="w-[90%] h-52 sm:h-72 lg:mt-56 lg:w-[69%]  xl:w-1/2 xl:h-[430px] overflow-hidden rounded-xl absolute left-1/2  xl:mt-52 -translate-x-1/2 top-2/3 sm:top-1/2 video-frame
+       -translate-y-1/3"
+    >
+      <img
+        class="w-full h-full"
+        src="../../../..//public/images/videosView/video-frame.jpg"
+        alt="Villa image"
+      />
+      <a
+        href="https://www.youtube.com/"
+        target="_blank"
+        class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-14 h-14 lg:w-24 lg:h-24 rounded-full flex-center bg-play backdrop-blur-lg text-2xl lg:text-4xl text-white"
+      >
+        <i class="fa-solid fa-circle-play opacity-100"></i>
+      </a>
+    </div>
+  </div>
+
+<div class="h-[800px] mt-16 w-[70%] lg:mt-52 xl:mt-80">
+  <ul class="grid grid-cols-1 lg:grid-cols-3 gap-10">
+    <li *ngFor="let item of infoList" class="p-5 px-2  gap-4 bg-orange-100  opacity-85 flex items-center rounded-lg relative">
+      <i class="w-14 h-14 rounded-full -right-5 -top-5 absolute bg-orange-600 animate-bounce"></i>
+      <span class="text-5xl font-semibold flex  items-center  ml-11 text-orange-600">
+        {{item.number}}
+      </span>
+      <p class="flex flex-col text-xl font-medium">
+        {{item.des1}}
+        <span>
+          {{item.des2}}
+        </span>
+      </p>
+    </li>
+  </ul>
+</div>
+
+</div>

@@ -1,0 +1,14 @@
+.change-nav {
+  animation: change-navbar 1s ease-in;
+  animation-timeline: Scroll(block nearest);
+  
+}
+
+@keyframes change-navbar {
+0%{
+  padding-block: 20px;
+}
+10%{
+  padding-block: 4px;
+}
+}

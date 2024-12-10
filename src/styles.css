@@ -1,0 +1,49 @@
+/* You can add global styles to this file, and also import other style files */
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+@layer components{
+  body{
+    @apply overflow-x-hidden
+  }
+  .container{
+    @apply w-[70%]
+  }
+  .flex-center{
+    @apply flex justify-center items-center
+  }
+  .blur-white{
+    background-color: transparent;
+    backdrop-filter: blur(1px);
+  }
+  .blur-white1{
+    background-color: rgba(255, 255, 255, .3);
+    backdrop-filter: blur(1px);
+  }
+  .blur-white2{
+    background-color: transparent;
+    backdrop-filter: blur(2px);
+  }
+  .blur-white3{
+    background-color: rgba(0, 0, 0, .4);
+    backdrop-filter: blur(10px);
+  }
+  .blur-white4{
+    background-color: rgba(0, 0, 0, .1);
+    backdrop-filter: blur(5px);
+
+  }
+  .box-shadow {
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+  }
+
+  .bg{
+    background-image: url('..//public/images/eb54c236-09ee-4081-9cb4-24bda036e625_1200x324-zamora.avif');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+  }
+
+}

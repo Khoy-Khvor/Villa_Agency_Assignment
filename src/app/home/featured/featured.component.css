@@ -1,0 +1,36 @@
+.nobb {
+  border-bottom: none;
+}
+
+
+@media only screen and (max-width: 400px) {
+  .featured {
+    margin-top: 300px;
+  }
+  .featured-detail {
+    flex: 1 1 0%;
+  }
+  .list-detail {
+    margin-bottom: 250px;
+  }
+}
+@media only screen and (max-width: 320px) {
+  .featured {
+    margin-top: 450px;
+  }
+  .featured-detail {
+    flex: 1 1 0%;
+  }
+  .list-detail {
+    margin-bottom: 250px;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  .nobb {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  .box-shadow {
+    box-shadow: none;
+  }
+}
+

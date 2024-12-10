@@ -1,0 +1,87 @@
+<div class="w-screen mt-20 bg-white flex-center">
+  <div class="w-[90%] lg:container grid grid-cols-1">
+    <div class="grid grid-cols-1">
+      <span
+        class="flex-center gap-2 text-lg text-orange-600 uppercase font-bold"
+      >
+        <i class="w-[2px] h-6 bg-orange-600"></i>
+        properties
+      </span>
+      <h1 class="flex flex-col items-center justify-center font-bold text-4xl">
+        We Provide The Best
+        <span> Property You Like </span>
+      </h1>
+    </div>
+    <div
+      class="w-fulll grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-3 mt-20"
+    >
+      <div
+
+      *ngFor='let item of itemList; let i = index'
+        class="grid grid-cols-1 p-6 bg-gray-100 rounded-lg max-h-[830px]"
+      >
+        <div class="grid grid-cols-1">
+          <a
+            routerLink="/property-detail"
+            class="h-4/5 overflow-hidden rounded-lg"
+          >
+            <img class="w-full h-full" [src]="item.image" alt="Image" />
+          </a>
+          <div class="flex justify-between items-center -mt-8">
+            <span
+              class="text-sm font-semibold p-2 bg-rose-200 rounded-lg min-w-28 flex-center"
+              >{{ item.name }}</span
+            >
+            <span class="text-lg font-bold text-orange-600">{{
+              item.price | currency : "USD" : "symbol" : "1.3-3"
+            }}</span>
+          </div>
+          <h2 class="text-lg font-bold my-5">{{ item.title }}</h2>
+          <div class="grid grid-cols-3 gap-x-5 gap-y-2 py-5 border-b">
+            <p class="text-sm text-slate-600 text-nowrap">
+              Bedrooms:
+              <span class="font-bold text-black">{{
+                item.detail.bedroom
+              }}</span>
+            </p>
+            <p class="text-sm text-slate-600 text-nowrap">
+              Bathrooms:
+              <span class="font-bold text-black">{{
+                item.detail.bathroom
+              }}</span>
+            </p>
+            <p class="text-sm text-slate-600 text-nowrap">
+              Area:
+              <span class="font-bold text-black"
+                >{{ item.detail.area }}m2</span
+              >
+            </p>
+            <p class="text-sm text-slate-600 text-nowrap">
+              Floor:
+              <span class="font-bold text-black"
+                >{{ item.detail.floor }}{{ i > 3 ? "th" : "" }}</span
+              >
+            </p>
+            <p class="text-sm text-slate-600 text-nowrap">
+              Parking:
+              <span class="font-bold text-black"
+                >{{ item.detail.parking }} {{ i > 3 ? "cars" : "spots" }}
+              </span>
+            </p>
+          </div>
+          <div class="flex-center h-24 flex-center mt-5">
+            <a
+              routerLink="/property-detail"
+              class="font-bold group bg-black h-8 w-40 text-sm flex-center text-white rounded-full relative py-5 px-2"
+            >
+              <span
+                class="w-[90%] group-hover:text-orange-500 duration-200 ease-in-out flex-center"
+                >Schedule a visit</span
+              >
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,132 @@
+<div class="w-screen h-80 flex-center relative bg mb-10">
+  <div class="w-full h-full blur-white4"></div>
+  <div class="w-full flex flex-col items-center justify-center absolute left-0">
+    <span
+      class="uppercase text-lg font-sans font-semibold text-black px-5 py-2 bg-white"
+      >Home / Properties</span
+    >
+    <h1
+      class="text-4xl lg:text-5xl xl:text-6xl font-bold font-sans text-white mt-5 uppercase"
+    >
+      Properties
+    </h1>
+  </div>
+</div>
+<div class="w-screen flex flex-col items-center justify-center">
+  <div class="w-[90%] lg:container flex flex-col items-center justify-center">
+    <div
+      class="w-full sm:w-2/3 lg:min-w-1/2 grid grid-cols-3 sm:grid-cols-4 gap-4 p-6 sm:p-0"
+    >
+      <button
+        class="py-3 outline-none border-none text-white bg-orange-600 font-sans font-semibold rounded-[5px] text-sm xl:text-lg hover:bg-orange-500 duration-200 ease-in-out"
+      >
+        Show All
+      </button>
+      <button
+        class="py-3 outline-none border-none text-white bg-black font-sans font-semibold rounded-[5px] text-sm xl:text-lg hover:bg-orange-500 duration-200 ease-in-out"
+      >
+        Apartment
+      </button>
+      <button
+        class="py-3 outline-none border-none text-white bg-black font-sans font-semibold rounded-[5px] text-sm xl:text-lg hover:bg-orange-500 duration-200 ease-in-out"
+      >
+        Villa House
+      </button>
+      <button
+        class="py-3 outline-none border-none text-white bg-black font-sans font-semibold rounded-[5px] text-sm xl:text-lg hover:bg-orange-500 duration-200 ease-in-out"
+      >
+        Penthouse
+      </button>
+    </div>
+    <div
+      class="w-fulll grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-3 mt-5  xl:mt-20"
+    >
+      <div
+        *ngFor="let item of itemList; let i = index"
+        class="grid grid-cols-1 p-6 bg-gray-100 rounded-lg max-h-[830px]"
+      >
+        <div class="grid grid-cols-1">
+          <a
+            routerLink="/property-detail"
+            class="h-4/5 overflow-hidden rounded-lg"
+          >
+            <img class="w-full h-full" [src]="item.image" alt="Image" />
+          </a>
+          <div class="flex justify-between items-center -mt-8">
+            <span
+              class="text-sm font-semibold p-2 bg-rose-200 rounded-lg min-w-28 flex-center"
+              >{{ item.name }}</span
+            >
+            <span class="text-lg font-bold text-orange-600">{{
+              item.price | currency : "USD" : "symbol" : "1.3-3"
+            }}</span>
+          </div>
+          <h2 class="text-lg font-bold my-5">{{ item.title }}</h2>
+          <div class="grid grid-cols-3 gap-x-5 gap-y-2 py-5 border-b">
+            <p class="text-sm text-slate-600 text-nowrap">
+              Bedrooms:
+              <span class="font-bold text-black">{{
+                item.detail.bedroom
+              }}</span>
+            </p>
+            <p class="text-sm text-slate-600 text-nowrap">
+              Bathrooms:
+              <span class="font-bold text-black">{{
+                item.detail.bathroom
+              }}</span>
+            </p>
+            <p class="text-sm text-slate-600 text-nowrap">
+              Area:
+              <span class="font-bold text-black">{{ item.detail.area }}m2</span>
+            </p>
+            <p class="text-sm text-slate-600 text-nowrap">
+              Floor:
+              <span class="font-bold text-black"
+                >{{ item.detail.floor }}{{ i > 3 ? "th" : "" }}</span
+              >
+            </p>
+            <p class="text-sm text-slate-600 text-nowrap">
+              Parking:
+              <span class="font-bold text-black"
+                >{{ item.detail.parking }} {{ i > 3 ? "cars" : "spots" }}
+              </span>
+            </p>
+          </div>
+          <div class="flex-center h-24 flex-center mt-5">
+            <a
+              routerLink="/property-detail"
+              class="font-bold group bg-black h-8 w-40 text-sm flex-center text-white rounded-full relative py-5 px-2"
+            >
+              <span
+                class="w-[90%] group-hover:text-orange-500 duration-200 ease-in-out flex-center"
+                >Schedule a visit</span
+              >
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="flex-center w-full my-20 mb-32 gap-3">
+    <button
+      class="flex-center h-10 text-lg w-10 rounded-full text-white bg-black font-sans font-bold hover:bg-orange-500 duration-200 ease-in-out"
+    >
+      1
+    </button>
+    <button
+      class="flex-center h-10 text-lg w-10 rounded-full text-white font-sans font-bold hover:bg-orange-500 duration-200 ease-in-out bg-orange-600"
+    >
+      2
+    </button>
+    <button
+      class="flex-center h-10 text-lg w-10 rounded-full text-white bg-black font-sans font-bold hover:bg-orange-500 duration-200 ease-in-out"
+    >
+      3
+    </button>
+    <button
+      class="flex-center h-10 text-lg w-10 rounded-full text-white bg-black font-sans font-bold hover:bg-orange-500 duration-200 ease-in-out"
+    >
+      <i class="fa-solid fa-angles-right animate-pulse"></i>
+    </button>
+  </div>
+</div>

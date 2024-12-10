@@ -1,0 +1,149 @@
+<div class="w-screen  h-80 flex-center relative bg mb-10">
+  <div class="w-full h-full blur-white4"></div>
+  <div class="w-full flex flex-col items-center justify-center absolute left-0">
+    <span
+      class="uppercase text-lg font-sans font-semibold text-black px-5 py-2 bg-white"
+      >Home / Single Property</span
+    >
+    <h1
+      class="text-4xl lg:text-5xl xl:text-6xl font-bold font-sans text-white mt-5 uppercase"
+    >
+      Single Property
+    </h1>
+  </div>
+</div>
+
+<div class="w-screen flex-center mb-10">
+  <div class="w-full sm:w-[90%] lg:container grid grid-cols-1 px-2 lg:flex lg:gap-10">
+    <div class="grid grid-cols-1  w-full lg:w-2/3 xl:w-3/4">
+      <img
+        height=""
+        class="rounded-sm w-full"
+        src="../../..//public/images/single-property.jpg"
+        alt="Image"
+      />
+      <div class="grid grid-cols-1">
+        <div class="py-5 my-5 border-b">
+          <span class="bg-rose-200 text-sm lg:text-lg py-1 px-3 rounded-lg"
+            >Apartment</span
+          >
+          <h1 class="text-lg font-bold my-5 lg:text-2xl">
+            24 New Street Miami, OR 24560
+          </h1>
+        </div>
+        <div class="grid grid-cols-1 mt-5 mb-10">
+          <p class="text-sm leading-6 mb-10 sm:text-lg">
+            Get <strong>the best villa agency</strong> HTML CSS Bootstrap
+            Template for your company website. TemplateMo provides you the
+            <span class="text-blue-500">best free CSS templates</span>
+            in the world. Please tell your friends about it. Thank you. Cloud
+            bread kogi bitters pitchfork shoreditch tumblr yr succulents
+            single-origin coffee schlitz enamel pin you probably haven't heard
+            of them ugh hella.
+          </p>
+          <p class="text-sm leading-6 sm:text-lg">
+            When you look for free CSS templates, you can simply type TemplateMo
+            in any search engine website. In addition, you can type TemplateMo
+            Digital Marketing, TemplateMo Corporate Layouts, etc. Master cleanse
+            +1 intelligentsia swag post-ironic, slow-carb chambray knausgaard
+            PBR&B DSA poutine neutra cardigan hoodie pop-up.
+          </p>
+        </div>
+      </div>
+      <div class=" flex flex-col ">
+        <div
+          class=" w-full  h-full flex flex-col items-center justify-center  bg-gray-100 mt-14  max-2xl:mt-3 rounded-lg overflow-hidden duration-200"
+        >
+          <div class="w-full container-drop min-h-10 flex flex-col text-xl relative">
+            <span
+              (click)="openDetail(1)"
+              (dblclick)="openDetail(0)"
+              class="border-b p-3 cursor-pointer {{
+                nameOpen === 1 && 'text-orange-600'
+              }} select-none"
+              >Best usful links?</span
+            >
+            <p [hidden]="nameOpen !== 1" class="border-y p-3 text-sm  max-lg:pb-0 sm:text-lg">
+              Get the <strong>best villa</strong> website template in HTML CSS and
+              Bootstrap for your business. TemplateMo provides you the best free
+              CSS templates in the world. Please tell your friends about it.
+            </p>
+          </div>
+          <div class="w-full min-h-10 flex flex-col text-xl ">
+            <span
+            (dblclick)="openDetail(0)"
+              (click)="openDetail(2)"
+              class="border-b p-3 cursor-pointer {{
+                nameOpen === 2 && 'text-orange-600'
+              }} select-none"
+              >How does this work?</span
+            >
+            <p *ngIf="nameOpen === 2" class="border-y p-3 text-sm sm:text-lg">
+              Dolor <strong>almesit amet</strong>, consectetur adipiscing elit,
+              sed doesn't eiusmod tempor incididunt ut labore consectetur
+              adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+              dolore magna aliqua.
+            </p>
+          </div>
+          <div class="w-full min-h-10 flex flex-col text-xl">
+            <span
+            (dblclick)="openDetail(0)"
+              (click)="openDetail(3)"
+              class="border-b p-3 cursor-pointer {{
+                nameOpen === 3 && 'text-orange-600'
+              }} select-none"
+              >Why is Villa Agency the best?</span
+            >
+            <p *ngIf="nameOpen === 3" class="border-y p-3 text-sm sm:text-lg">
+              Dolor <strong>almesit amet</strong>, consectetur adipiscing elit,
+              sed doesn't eiusmod tempor incididunt ut labore consectetur
+              adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+              dolore magna aliqua.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="w-full lg:flex-1  mt-10  lg:h-1/2 lg:mt-0  ">
+      <ul class="w-full h-full flex flex-col justify-start box-shadow p-6">
+        <li *ngFor="let item of infoList , let i = index" class="h-full lg:h-auto ">
+          <div [ngClass]="{'border-none': i===3 }" class="flex items-center gap-8 py-4 xl:py-6 px-1 border-b">
+            <div class="flex-center">
+              <img [src]="item.path" alt="Info image" class="w-10 sm:w-11 lg:w-12 xl:w-13 2xl:w-14">
+            </div>
+            <div class="flex flex-col justify-center">
+              <h1 class="text-xl lg:text-2xl font-bold ">
+                 {{item.title}}
+              </h1>
+              <p class="text-gray-600 text-sm sm:text-lg">
+                {{item.des}}
+              </p>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+</div>
+
+<app-best-deal></app-best-deal>
+<!-- <p-panelMenu [model]="items" styleClass="w-full md:w-20rem">
+  <ng-template pTemplate="item" let-item>
+      <a pRipple class="flex align-items-center px-3 py-2 cursor-pointer">
+          <i [class]="item.icon + ' text-primary'"></i>
+          <span class="ml-2">
+              {{ item.label }}
+          </span>
+          <p-badge *ngIf="item.badge" class="ml-auto" [value]="item.badge" /> -->
+           <!-- <p-badge></p-badge>
+          <span *ngIf="item.shortcut" class="ml-auto border-1 surface-border
+          border-round surface-100 text-xs p-1">
+              {{ item.shortcut }}
+          </span>
+      </a>
+  </ng-template>
+</p-panelMenu> -->
+
